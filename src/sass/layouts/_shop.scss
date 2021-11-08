@@ -1,0 +1,154 @@
+.heading {
+    background: url(../../assets/image/heading-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+
+    h1 {
+        color: $black;
+        font-size: 4rem;
+    }
+
+    p {
+        padding-top: 1rem;
+        font-size: 2rem;
+        color: $light-color;
+
+        a {
+            color: $black;
+            padding-right: .5rem;
+            
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.2rem 0;
+    border-bottom: $border;
+    color: $black;
+
+    span {
+        color: $green;
+        padding-left: .5rem;
+    }
+
+    a {
+        margin-left: auto;
+        color: $light-color;
+        font-size: 1.5rem;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+.category {
+
+    .box-container {
+        @include grid(16rem);
+        padding: 4rem 0;
+
+        .box {
+            text-align: center;
+
+            img {
+                height: 15rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+                margin: 1rem 0;
+                color: $light-color;
+
+                &:hover {
+                    color: $green;
+                }
+            }
+
+            
+        }
+    }
+}
+
+.products {
+    .box-container {
+        @include grid(30rem);
+
+        .box {
+            position: relative;
+            background:  $light-bg;
+            text-align: center;
+            overflow: hidden;
+
+            &:hover .icons{
+                top: 0;
+            }
+
+            .icons {
+                position: absolute;
+                top: -110%; left: 0;
+                height: 30rem;
+                width: 100%;
+                @include flex(center, center);
+                background: rgba(243, 243, 243, .8);
+                gap: 1rem;
+
+                a {
+                    font-size: 2rem;
+                    height: 5rem;
+                    width: 5rem;
+                    line-height: 5rem;
+                    background: $white;
+                    box-shadow: $box-shadow;
+                    color: $black;
+
+                    &:hover {
+                        background: $green;
+                        color: $white;
+                    }
+                }
+            }
+
+            .image {
+                // height: 30rem;
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content {
+                padding: 1.5rem;
+                
+                h3 {
+                    font-size: 2rem;
+                    color: $black;
+                }
+
+                .price {
+                    font-size: 2rem;
+                    color: $black;
+                    padding: 1rem 0;
+                }
+
+                .stars i{
+                    font-size: 1.7rem;
+                    color: $green;
+                }
+            }
+        }
+    }
+}

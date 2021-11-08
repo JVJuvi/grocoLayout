@@ -1,0 +1,30 @@
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+
+@mixin grid ($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+
+@mixin tablet {
+    @media only screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-768 {
+    @media only screen and (max-width: $mobile-768) {
+        @content;
+    }   
+}
+
+@mixin mobile {
+    @media only screen and (max-width: $mobile) {
+        @content;
+    }
+}

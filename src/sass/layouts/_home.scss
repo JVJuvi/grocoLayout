@@ -1,0 +1,154 @@
+.home {
+    padding-top: 15rem;
+    background: url(../../assets/image/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    position: relative;
+    // height: 100vh;   
+
+    .slides-container {
+
+        .slide {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            // display: none;
+            padding: 0 3rem;
+
+            &.active {
+                display: flex;
+
+                .content {
+                    animation: fadeLeft .4s linear .4s backwards;
+                }
+
+                .image {
+                    img {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            .content {
+                flex: 1 1 40rem;
+
+                span {
+                    color: $light-color;
+                    font-size: 2.5rem;
+                }
+
+                h3 {
+                    font-size: 6rem;
+                    color: $black;
+                    padding: .5rem 0;
+
+                    @include mobile {
+                        font-size: 5rem;
+                    }
+                }
+            }
+
+            .image {
+                flex: 1 1 40rem;
+
+                img {
+                    width: 100%;
+                    transform: scale(0);
+                    transition: transform .7s ease;
+                }
+            }
+        }
+    }
+}
+
+.swiper-slide .swiper-slide-next {
+    margin-left: 10rem !important;
+}
+
+#next,
+#prev{
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: $box-shadow;
+    text-align: center;
+    background: $white;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: $black;
+    cursor: pointer;
+    z-index: 999;
+
+    @include tablet {
+        transform: translateY(0);
+        top: 88%;
+    }
+
+    &:hover {
+        background: $green;
+        color: $white;
+        transition: .3s linear;
+    }
+
+}
+
+#prev {
+    left: 2rem;
+
+    @include tablet {
+        left: auto;
+        right: 8rem;
+    }
+}
+
+#next {
+    right: 2rem;
+}
+
+
+.banner-container {
+    @include grid(32rem);
+
+    .banner {
+        position: relative;
+        height: 25rem;
+        overflow: hidden;
+
+        &:hover img{
+            transform: scale(1.2);
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%; left: 2rem;
+            transform: translateY(-50%);
+
+            span {
+                color: $light-color;
+                font-size: 1.5rem;
+            }
+
+            h3{
+                font-size: 2rem;  
+                padding-top: .5rem;
+                color: $black;
+            }
+
+            .btn {
+                padding: .5rem 2rem;
+            }
+        }
+    }
+}
+

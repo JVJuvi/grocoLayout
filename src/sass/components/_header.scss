@@ -1,0 +1,275 @@
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: $white;
+    box-shadow: $box-shadow;
+    @include flex(center, space-between);
+    padding: 2rem 9%;
+
+    @include tablet{
+        padding: 2rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: $black;
+
+        i {
+            color: $green;
+            padding-right: .5rem;
+        }
+    }
+
+    .navbar {
+
+        @include mobile-768 {
+            position: absolute;
+            top: 99%; right: 0; left: 0;
+            background-color: $white;
+            border-top: $border;
+            border-bottom: $border;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            a {
+                margin: 1.5rem !important;
+                padding: 1.5rem;
+                background: $light-bg;
+                font-size: 2rem !important;
+                display: block;
+                border-radius: .5rem;
+            }
+
+        }
+
+        a {
+            font-size: 1.7rem;
+            color: $light-color;
+            margin: 0 1rem;
+
+            &.active {
+                color: $green;
+            }
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .icons div{
+        font-size: 2.5rem;
+        margin-left: 1.7rem;
+        cursor: pointer;
+        color: $light-color;
+
+        &:hover {
+            color: $green;
+        }
+        
+    }
+    .search-form {
+        position: absolute;
+        top: -115%; right: 2rem;
+        width: 50rem;
+        height: 5.5rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        box-shadow: $box-shadow;
+
+        @include mobile-768 {
+            width: 100%;
+            right: 0;
+            border-radius: 0;
+
+            &.active {
+                top: 99%;
+                border-top: $border;
+                border-bottom: $border;
+
+            }
+        }
+
+        &.active {
+            top: 115%;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            padding: 0 1.2rem;
+            font-size: 1.6rem;
+            color: $black;
+            text-transform: none;
+        }
+
+        label {
+            font-size: 2.5rem;
+            margin-left: 1.7rem;
+            padding: 0 1.2rem;
+            cursor: pointer;
+            color: $light-color;
+    
+            &:hover {
+                color: $green;
+            }       
+        }
+    }
+
+    .shopping-cart {
+        position: absolute;
+        top: 115%; right: -105%;
+        background: $white;
+        border-radius: .5rem;
+        width: 35rem;
+        box-shadow: $box-shadow;
+        padding: 2rem;
+
+        &.active {
+            right: 2rem;
+            transition: .3s linear;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            .fa-times {
+                position: absolute;
+                top: 50%; right: 2rem;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                color: $light-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: $green;
+                }
+            }
+
+            img {
+                height: 10rem;
+            }
+
+            .content {
+
+                h3 {
+                    font-size: 1.7rem;
+                    padding-bottom: .5rem;
+                    color: $black;
+                }
+
+                span {
+                    font-size: 1.5rem;
+                    color: $light-color;
+
+                    &.multiply {
+                        margin: 0 .5rem;
+                    }
+                }
+            }
+        }
+
+        .total {
+            color: $light-color;
+            text-align: center;
+            font-size: 2.2rem;
+
+            span {
+                color: $black;
+            }
+        }
+
+        .btn {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .login-form {
+        position: absolute;
+        top: 115%; right: -105%;
+        background: $white;
+        border-radius: .5rem;
+        width: 35rem;
+        box-shadow: $box-shadow;
+        padding: 2rem;
+
+        &.active {
+            right: 2rem;
+            transition: .3s linear;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            color: $black;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: .7rem;
+        }
+        
+        .box {
+            display: block;
+            width: 100%;
+            border: $border;
+            margin: .7rem 0;
+            padding: 1rem 1.2rem;
+            font-size: 1.5rem;
+            color: $black;
+            text-transform: none;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: .7rem 0;
+
+            label {
+                font-size: 1.5rem;
+                color: $light-color;
+                cursor: pointer;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        p {
+            color: $light-color;
+            padding-top: .7rem;
+            font-size: 1.4rem;
+
+            a {
+                color: $green;
+
+                &:hover {
+                    text-decoration: underline;
+                    transition: .3s linear;
+                }
+            }
+        }
+
+    }
+}
+
+#menu-btn {
+    display: none;
+
+    @include mobile-768 {
+        display: initial;
+    }
+}
